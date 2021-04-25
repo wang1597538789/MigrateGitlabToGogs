@@ -121,6 +121,7 @@ for i in range(len(filtered_projects)):
     # Create repo 
     if args.add_to_private:
         create_repo = s.post(gogs_url+'/user/repos?token=%s'%gogs_token, data=dict(name=dst_name, private=True))
+        print (gogs_url+'/user/repos?token=%s'%gogs_token)
     elif args.add_to_organization:
         create_repo = s.post(gogs_url+'/org/%s/repos'%args.add_to_organization, 
                             data=dict(token=gogs_token, name=dst_name, private=True, description=src_description))
