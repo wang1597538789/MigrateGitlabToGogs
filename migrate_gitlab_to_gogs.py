@@ -137,7 +137,7 @@ for i in range(len(filtered_projects)):
     
     dst_info = json.loads(create_repo.text)
 
-    dst_url = dst_info['ssh_url']
+    dst_url = dst_info['html_url'].replace('199.180.113.234','127.0.0.1')
     # Git pull and push
     subprocess.check_call(['git','clone','--bare',src_url])
     os.chdir(src_url.split('/')[-1])
