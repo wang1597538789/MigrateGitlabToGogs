@@ -106,7 +106,9 @@ if not args.no_confirm:
 
 for i in range(len(filtered_projects)):
     src_name = filtered_projects[i]['name']
-    src_url = filtered_projects[i]['ssh_url_to_repo']
+    # src_url = filtered_projects[i]['ssh_url_to_repo']
+    src_url = 'http://113.16.255.12:40201/'+filtered_projects[i]['path_with_namespace']+'.git'
+    
     src_description = filtered_projects[i]['description']
     dst_name = src_name.replace(' ','-')
 
